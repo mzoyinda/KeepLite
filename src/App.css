@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+body{
+  background-color:#023047;
+}
+.Navbar{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.brand{
+  font-family: 'Courgette', cursive;
+  color: rgb(247, 247, 247);
+  font-size: 2.5rem;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+.brandImg{
+  width:45px;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.CreateNoteContainer{
+ display: block;
+ text-align: center;
+}
+.card-title{
+  color: rgb(0, 0, 0);
+}
+
+#note{
+  resize: none;
+  width: 90%;
+}
+#title,#note{
+  border: none;
+  outline: none;
+  padding: .3rem;
+  margin-left:0.4rem;
+  margin-top:0.4rem;
+}
+#title{
+  width: 90%;
+}
+
+.addNote svg {
+  position: absolute;
+  border: none;
+  right: 0.6rem;
+  border-radius: 5px;
+  padding: 0.2rem;
+  background-color:#3b4559;
+  font-size: 2.5rem;
+  bottom: -1.6rem;
+}
+.addNote {
+border: none;
+padding: 0;
+background-color: transparent;
+}
+.addNote svg:hover, .addNote svg:focus {
+font-size: 2.3rem;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+.errorMessage{
+  color:#de1f5f;
+}
+.NoteContainer{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+  position: relative;
+  margin: 50px auto;
+}
+.NoteCard{
+  background-color: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 20px;
+  cursor: default;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  position: relative;
+}
+.card{
+  border: none !important;
+}
+.ColorButton{
+border: none;
+width: fit-content;
+background-color: transparent; 
+font-size: 1.5rem;
+}
+.yellow{color:#fb8500;}
+.blue{color:#219ebc}
+.red{color:#c1121f}
+
+.ColorButton:hover, .TrashButton:hover{
+  font-size: 1.3rem;
+    border: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .TrashButton{
+border: none;
+width: fit-content;
+background-color: transparent; 
+font-size: 1.4rem;
+}
+.IconContainer{
+  display: flex;
+  justify-content: space-between;
+}
+.footer{
+  display: block;
+  position: fixed;
+  width: 100%;
+  padding: 5px;
+  font-weight: 500;
+  font-size: 1rem ;
+  bottom: 0;
+  text-align: center;
+  background-color: #8ecae6;
+}
+.footer p{
+  margin: 0;
+}
+.footer .dev{
+  font-family: 'Courgette', cursive;
+  text-decoration: none;
+  font-weight: 600;
+  color:#023047;
+}
+.footer .love{
+  color: #c1121f;
+}
