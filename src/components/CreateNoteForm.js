@@ -5,12 +5,11 @@ import { Col, FormGroup, Input, Card, Button } from 'reactstrap';
 const CreateNoteForm = ({handleNote}) => {
     
     const [expanded, setExpanded] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const [note, setNote] = useState({
         title: "",
         body: "",
       });
-    const [isCompleted, setIsCompleted] = useState(false)
-    const [errorMessage, setErrorMessage] = useState('');
     
 
     const handleClick = () => {
@@ -37,13 +36,11 @@ const CreateNoteForm = ({handleNote}) => {
             if (!note.title || !note.body ) {
                 setErrorMessage('you have to fill in all fields');
             } else {
-                setIsCompleted(true);
                 handleNote(note)
                 setNote({
                     title: "",
                     body: "",
                   });
-                console.log(isCompleted);
             }
         }
         catch (error) {

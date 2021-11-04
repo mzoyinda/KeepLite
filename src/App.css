@@ -82,7 +82,6 @@ font-size: 2.3rem;
   background-color: #fff;
   border: 1px solid #dadce0;
   border-radius: 8px;
-  padding: 20px;
   cursor: default;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
@@ -90,6 +89,9 @@ font-size: 2.3rem;
 }
 .card{
   border: none !important;
+}
+.stickyCard{
+  padding: 15px;
 }
 .ColorButton{
 border: none;
@@ -116,7 +118,12 @@ font-size: 1.4rem;
 .IconContainer{
   display: flex;
   justify-content: space-between;
+  padding: 5px;
+  padding-top: 0;
 }
+/* .IconContainer:hover{
+  border-top: 1px solid rgba(197, 184, 184, 0.801);
+} */
 .footer{
   display: block;
   position: fixed;
@@ -136,6 +143,9 @@ font-size: 1.4rem;
   text-decoration: none;
   font-weight: 600;
   color:#023047;
+}
+.footer .dev:hover{
+  opacity: 0.8;
 }
 .footer .love{
   color: #c1121f;
