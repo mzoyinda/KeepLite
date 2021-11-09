@@ -1,31 +1,18 @@
-import React,{useState} from 'react';
+import React from 'react';
 import { Button, Modal, ModalBody, ModalFooter, Card, CardTitle, CardText } from 'reactstrap';
-import { MdInvertColors , MdOutlineInvertColorsOff } from 'react-icons/md';
-import styled from "@emotion/styled";
 
 
-const ModalExample = ({ className, modal, title, body, handleToggle, handleChange, handleUpdate }) => {
-    
-    const [background, setBackground] = useState('#fff');
+const ModalExample = ({ className, modal,id, title, body, handleToggle, handleChange, handleUpdate }) => {
 
-   
-    const StickyCard  = styled.div`
-    &.NoteCard, .card {
-      background-color: ${background};
-    }
-  `;
-  
-    const setStyle = (background) => {
-      setBackground(background);
-      console.log(background);
-    }
-
+    const handleClick = () => {
+        handleUpdate(id);
+      }
 
     return (
       
           <Modal isOpen={modal} toggle={handleToggle} className={className} centered>
             <ModalBody>
-                <StickyCard className="NoteCard" >
+                <div className="NoteCard" >
                 <Card className="stickyCard">
                     <div>
                             <CardTitle tag="h5">
@@ -36,7 +23,7 @@ const ModalExample = ({ className, modal, title, body, handleToggle, handleChang
                                     onChange={handleChange}
                                   />
                               </CardTitle>
-                              <CardText hag="p">
+                              <CardText tag="p">
                                   <input
                                     value={body}
                                     type="text"
@@ -47,18 +34,12 @@ const ModalExample = ({ className, modal, title, body, handleToggle, handleChang
                     </div>
                     </Card>
                     <div className="IconContainer">
-                        <div className="buttonContainer">
-                            <button className="ColorButton white" onClick={() => {setStyle("#fff"); }}><MdOutlineInvertColorsOff /></button>
-                            <button className="ColorButton yellow" onClick={() => setStyle("#fb8500")}><MdInvertColors /></button>
-                            <button className="ColorButton blue"  onClick={() => setStyle("#219ebc")}><MdInvertColors /></button>
-                            <button className="ColorButton red" onClick={() => setStyle("#c1121f")}><MdInvertColors /></button>
-                        </div>
-                        <ModalFooter>
-                            <Button color="secondary" onClick={handleUpdate}>Submit</Button>{' '}
+                        <ModalFooter className="modalFooter">
+                            <Button color="secondary" onClick={handleClick}>Submit</Button>{' '}
                             <Button color="secondary" onClick={handleToggle}>Cancel</Button>
                         </ModalFooter>
                     </div>
-                </StickyCard>
+                </div>
             </ModalBody>   
       </Modal>
   );

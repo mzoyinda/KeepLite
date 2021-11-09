@@ -121,6 +121,9 @@ font-size: 1.4rem;
   padding: 5px;
   padding-top: 0;
 }
+.modalFooter{
+  width: 100%;
+}
 /* .IconContainer:hover{
   border-top: 1px solid rgba(197, 184, 184, 0.801);
 } */

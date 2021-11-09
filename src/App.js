@@ -12,6 +12,7 @@ function App() {
   const [notes, setNotes] = useState([])
   const [modal, setModal] = useState(false);
   const [editedNote, setEditedNote] = useState({
+    id:'',
     title: '',
     body: ''
   });
@@ -28,7 +29,6 @@ function App() {
   }
   
   const editNote = (id) => {
-    console.log(id)
 
     handleToggle();
   
@@ -39,11 +39,13 @@ function App() {
     console.log(editItem);
 
     setEditedNote({
+      id: id,
       title: editItem.title,
       body: editItem.body
     })
 
   }
+
 
   const handleEditChange = (e) => {
     const { name, value } = e.currentTarget;
@@ -55,18 +57,22 @@ function App() {
 });
 }
 
+
+
   const handleUpdate = (id) => {
-    
-    notes.findIndex((note, index) => {
+ 
+    const newNotes = [...notes]
+    const pos = newNotes.findIndex((note , index) => {
       return index === id;
     })
 
-      setNotes((note) => ({
-        ...notes,
-        [note.id]: editedNote
-      }));
-    
+    newNotes[pos]= editedNote;
+
+    setNotes(newNotes);
+    console.log(newNotes)
+    handleToggle();
   }
+
 
   const deleteNote = (id) => {
     setNotes((prevState) => {
@@ -95,6 +101,7 @@ function App() {
 
         <Modal
         modal={modal}
+        id={editedNote.id}
         title={editedNote.title}
         body={editedNote.body}
         handleChange={handleEditChange}
