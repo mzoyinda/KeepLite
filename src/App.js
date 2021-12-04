@@ -17,7 +17,6 @@ function App() {
     body: ''
   });
 
-
   const addNote = (newNote) => {
     setNotes((prevState) => {
       return [...prevState, newNote];
@@ -57,20 +56,19 @@ function App() {
 });
 }
 
-
-
   const handleUpdate = (id) => {
  
     const newNotes = [...notes]
-    const pos = newNotes.findIndex((note , index) => {
+    const position = newNotes.findIndex((note , index) => {
       return index === id;
     })
 
-    newNotes[pos]= editedNote;
+    newNotes[position]= editedNote;
 
     setNotes(newNotes);
-    console.log(newNotes)
+  
     handleToggle();
+    
   }
 
 
