@@ -78,20 +78,45 @@ font-size: 2.3rem;
   position: relative;
   margin: 50px auto;
 }
+
 .NoteCard{
-  background-color: #fff;
-  border: 1px solid #dadce0;
+  /* border: 1px solid #dadce0; */
   border-radius: 8px;
   cursor: default;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   position: relative;
 }
+.modal-body{
+  background-color: #023047;
+}
 .card{
   border: none !important;
 }
 .stickyCard{
   padding: 15px;
+}
+
+/* .NoteCard span{
+  display: none;
+}
+
+.NoteCard:hover span{
+  padding: 5px 20px 5px 5px;
+  display: block;
+  z-index: 100;
+  top:0;
+  right: 0;
+  margin: 0px;
+  width: 250px;
+  position: absolute;
+  top: 10px;
+  text-decoration: none
+} */
+
+.stickyCard .input2{
+  width: 45%;
+  resize: none;
 }
 .ColorButton{
 border: none;
